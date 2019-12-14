@@ -1,0 +1,17 @@
+server:
+  port: 8092
+#项目的发布路径是根目录
+spring:     #定义springmvc视图解析器
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+#dubbo配置文件
+dubbo:
+  scan:
+    basePackages: com.jt   #定义包扫描
+  application:
+    name: consumer-user    #定义服务名称 必须添加,这个是消费者
+  registry:
+    address: zookeeper://192.168.188.128:2181?backup=192.168.188.128:2182,192.168.188.128:2183
