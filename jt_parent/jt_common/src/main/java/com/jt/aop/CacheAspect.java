@@ -41,6 +41,7 @@ public class CacheAspect {
         try {
             if (StringUtils.isEmpty(resultJson)) {
                 // 执行目标方法,也就是第一次执行数据库查询
+				// 我就是加个注释试试
                 obj = joinPoint.proceed();
                 // 将数据转换成json，之后存入缓存
                 String json = ObjectMapperUtil.objectToJson(obj);
